@@ -26,6 +26,5 @@ public class simpleLazy {
         for (int i = 0 ; i<100 ; i++){
             new Thread(()-> System.out.println(simpleLazy.getInstance().hashCode())).start();
         }
-        System.out.println("测试以下Git版本变更");
     }
 }
