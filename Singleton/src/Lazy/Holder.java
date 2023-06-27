@@ -19,5 +19,6 @@ public class Holder {
         for (int i = 0 ; i<100 ; i++){
             new Thread(()-> System.out.println(Holder.getInstance().hashCode())).start();
         }
+
     }
 }
