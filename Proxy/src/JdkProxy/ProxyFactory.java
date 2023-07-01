@@ -32,6 +32,7 @@ InvocationHandler h ： 代理对象的调用处理程序
                             public Object invoke(Object proxy, Method method,
                                                  Object[] args) throws Throwable {
                                 System.out.println("代理点收取一些服务费用(JDK动态代理方式)");
+                                new TestProxy().sell();
                                   //执行真实对象
                                 Object result = method.invoke(station, args);
                                 return result;
