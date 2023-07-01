@@ -13,6 +13,8 @@ public class client {
     public static void main(String[] args) {
         //获取代理对象
         ProxyFactory factory = new ProxyFactory();
+//        System.getProperty("jdk.proxy.ProxyGenerator.saveGeneratedFiles","true"); //jdk8以后的配置
+        System.setProperty("sun.misc.ProxyGenerator.saveGeneratedFiles", "true"); //jdk8及以前
         SellTickets proxyObject = factory.getProxyObject();
         proxyObject.sell();
     }
