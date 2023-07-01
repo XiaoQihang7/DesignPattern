@@ -23,7 +23,7 @@ class Child {
     public void weakUp(){
         System.out.println("Waked Up! Crying wuwuwuwuwu...");
         cry=true;
-        wakeUpEvent bed = new wakeUpEvent(System.currentTimeMillis(), "bed");
+        wakeUpEvent bed = new wakeUpEvent(System.currentTimeMillis(), "bed",new Child());
         for (Observer o :
                 observerList) {
             o.actionOnWakeUp(bed);
@@ -70,14 +70,25 @@ interface Observer{
     void actionOnWakeUp(wakeUpEvent event);
 }
 
+abstract class Event<T>{
+    abstract T getSource();
+}
+
 //事件类
-class wakeUpEvent{
+class wakeUpEvent extends Event<Child>{
     long timestamp;
     String place;
+    //传入事件源
+    Child source;
 
-    public wakeUpEvent(long timestamp,String place){
+    public Child getSource() {
+        return source;
+    }
+
+    public wakeUpEvent(long timestamp, String place,Child source){
         this.timestamp = timestamp;
         this.place = place;
+        this.source = source;
     }
 }
 
