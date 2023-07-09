@@ -5,6 +5,7 @@ import java.io.ObjectOutputStream;
 
 /**
  *扩展为深克隆
+ * 需要对象序列化
  */
 public class CitationTest1 {
     public static void main(String[] args) throws Exception {
@@ -13,7 +14,7 @@ public class CitationTest1 {
         c1.setStu(stu);
 //创建对象输出流对象
         ObjectOutputStream oos = new ObjectOutputStream(new
-                FileOutputStream("D:\\workspace_idea\\DesignPattern\\Prototype\\b.txt"));
+                FileOutputStream("D:\\workspace_idea\\DesignPattern\\Prototype\\b.txt"));//需要对象序列化
 //将c1对象写出到文件中
         oos.writeObject(c1);
         oos.close();

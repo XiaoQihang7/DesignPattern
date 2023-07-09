@@ -1,4 +1,7 @@
 //测试访问类
+/**
+ * 浅克隆
+ */
 public class CitationTest {
     public static void main(String[] args) throws CloneNotSupportedException {
         Citation c1 = new Citation();
